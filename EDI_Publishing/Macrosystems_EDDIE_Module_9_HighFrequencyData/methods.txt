@@ -4,9 +4,9 @@ Module teaching materials were developed by M.E. Lofton, R.L. Cooke, and C.C. Ca
 
 As the ninth module within the suite of Macrosystems EDDIE (www.macrosystemseddie.org) teaching materials, this module was developed to introduce students to use of high-frequency water quality data and forecasts to inform drinking water treatment. In this module, students will explore high-frequency water quality data from a drinking water reservoir and use these data to make decisions about water extraction depth and treatment. This module will teach students to interpret high-frequency water quality data; how water quality variables change over time in reservoirs located in temperature regions; and how water quality data and forecasts can be used to inform water treatment decision-making. 
 
-The specific student learning goals for this module are that by the end of the module, students will be able to: 
+The learning goals for this module are that students will be able to:: 
 
-- Define key measures of surface freshwater quality (water temperature, dissolved oxygen, and turbidity).  
+- Define key measures of freshwater quality (water temperature, dissolved oxygen, and turbidity).  
 
 - Explain how water temperature changes over the course of a year in a temperate reservoir and how these changes affect water quality. 
 
@@ -14,15 +14,15 @@ The specific student learning goals for this module are that by the end of the m
 
 - Evaluate water quality data and forecasts to make decisions about drinking water treatment.  
 
-The module was tested by Cooke with community college students during the 2024-2025 academic year, and student feedback during this testing period was used to update and optimize teaching materials. 
+The module was tested by Cooke with community college students during the 2024-2025 academic year, and student feedback during this testing period was used to update teaching materials. 
 
 MODULE WORKFLOW
 
 Workflow for this module:
 
-1. Instructor chooses whether to deliver the module using Canvas or not. If using Canvas, the instructor should import the module to their course from the Canvas commons (https://lor.instructure.com/resources/15a6383a448e49a99dcdbb8c029a2a31?shared). If not using Canvas, all module materials can be accessed from this web page: https://serc.carleton.edu/eddie/teaching_materials/modules/module9.html.   
+1. The instructor chooses whether to deliver the module using the Canvas Learning Management System or not. If using Canvas, the instructor should import the module to their course from the Canvas commons (https://lor.instructure.com/resources/15a6383a448e49a99dcdbb8c029a2a31?shared). If not using Canvas, all module materials can be accessed from this web page: https://serc.carleton.edu/eddie/teaching_materials/modules/module9.html.   
 
-2. Students view a short (~10 minute) introductory video either in Canvas or in the R Shiny web application. The same video is linked from both locations. Alternatively, instructors may choose to modify the introductory presentation and present it themselves. An editable version of the slides is provided with the teaching materials below.  
+2. Students view a short (~10 minute) introductory video either in Canvas or in the R Shiny web application. The same video is linked from both locations. Alternatively, instructors may choose to modify the introductory PowerPoint presentation and present it themselves. An editable version of the slides is provided with the teaching materials below.  
 
 3. Students navigate to the R Shiny web application and follow the workflow instructions outlined on the Introduction tab:
 
@@ -32,7 +32,7 @@ b. Watch the "Guide to Module" video embedded in the interactive R Shiny web app
 
 c. Select a focal reservoir.
 
-d. Open the Canvas quiz questions associated with the reservoir you have chosen OR if you are not using Canvas, download a copy of all the questions as a Word document by clicking the "Download student handout" button.
+d. Open the Canvas quiz questions associated with the reservoir you have chosen OR if you are not using Canvas, download a copy of all the questions as a Word document by clicking the "Download student handout" button within the Shiny app.
 
 e. Work through the module to complete the Introduction questions and Activities A, B, and C in this web app. When you are prompted to answer questions, enter your answers in the Canvas quiz. Be sure to fill in the Canvas quiz that corresponds to the reservoir site you have chosen! If you are not completing the module using Canvas, you may type your answers into the Word document.
 

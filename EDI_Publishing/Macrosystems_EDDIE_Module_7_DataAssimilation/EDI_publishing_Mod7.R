@@ -84,15 +84,15 @@ library(EMLassemblyline)
   # temporal.coverage: Update the dates
   # package.id: enter the ID you obtained in Step 6
 
-mypath <- paste0(getwd(), '/EDI_Publishing/Macrosystems_EDDIE_Module_9_HighFrequencyData')
+mypath <- paste0(getwd(), '/EDI_Publishing/Macrosystems_EDDIE_Module_7_DataAssimilation')
 
 make_eml(path = mypath,
-         dataset.title = "Macrosystems EDDIE Module 9: Using High-Frequency Data to Improve Water Quality (Instructor Materials)",
+         dataset.title = "Macrosystems EDDIE Module 7: Using Data to Improve Ecological Forecasts (Instructor Materials)",
          other.entity = c("instructor_materials.zip"),
          other.entity.name = c("instructor_materials"),
          other.entity.description = c("This zip folder contains materials for instructors to teach the Macrosystems EDDIE 
                                  module in their classroom. See README file for file types and descriptions"),
-         temporal.coverage = c("2024-02-22", "2024-08-28"),
+         temporal.coverage = c("2022-03-01", "2024-03-12"),
          # keep geographic site as Derring for all MS EDDIE modules
          geographic.description = c("The Department of Biological Sciences at Virginia Tech is located in Blacksburg, Virginia, USA"),
          geographic.coordinates = c('37.229596', '-80.424863', '37.22854', '-80.426228'), #N, E, S, W
@@ -136,19 +136,19 @@ make_eml(path = mypath,
   # in step 7
 
 make_eml(path = mypath,
-         dataset.title = "Macrosystems EDDIE Module 9: Using High-Frequency Data to Improve Water Quality (Instructor Materials)",
+         dataset.title = "Macrosystems EDDIE Module 7: Using Data to Improve Ecological Forecasts (Instructor Materials)",
          other.entity = c("instructor_materials.zip"),
          other.entity.name = c("instructor_materials"),
          other.entity.description = c("This zip folder contains materials for instructors to teach the Macrosystems EDDIE 
                                  module in their classroom. See README file for file types and descriptions"),
-         temporal.coverage = c("2024-02-22", "2024-08-28"),
+         temporal.coverage = c("2022-03-01", "2024-03-12"),
          # keep geographic site as Derring for all MS EDDIE modules
          geographic.description = c("The Department of Biological Sciences at Virginia Tech is located in Blacksburg, Virginia, USA"),
          geographic.coordinates = c('37.229596', '-80.424863', '37.22854', '-80.426228'), #N, E, S, W
          maintenance.description = "Ongoing", 
-         user.id = "melofton",
+         user.id = "ccarey",
          user.domain = 'EDI',
-         package.id = "edi.1115.1") # Put your package.id here, followed by .1 (for 1st version)
+         package.id = "edi.1609.1") # Put your package.id here, followed by .1 (for 1st version)
 
 
   # Once your xml file with your PUBLISHED package.id is Done, return to the 
