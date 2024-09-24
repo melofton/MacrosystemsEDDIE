@@ -99,7 +99,7 @@ make_eml(path = mypath,
          maintenance.description = "Ongoing", 
          user.id = "melofton",
          user.domain = 'EDI',
-         package.id = "edi.1124.2") # Put your package.id here, followed by .1 (for 1st version)
+         package.id = "edi.1124.3") # Put your package.id here, followed by .1 (for 1st version)
 
 ## Step 8: Check your data product! ####
   # Return to the EDI staging environment (https://portal-s.edirepository.org/nis/home.jsp),
@@ -135,6 +135,8 @@ make_eml(path = mypath,
   # ALL OTHER entries in the make_eml() command should match what you ran above,
   # in step 7
 
+mypath <- paste0(getwd(), '/EDI_Publishing/Macrosystems_EDDIE_Module_9_HighFrequencyData')
+
 make_eml(path = mypath,
          dataset.title = "Macrosystems EDDIE Module 9: Using High-Frequency Data to Improve Water Quality (Instructor Materials)",
          other.entity = c("instructor_materials.zip"),
@@ -146,9 +148,9 @@ make_eml(path = mypath,
          geographic.description = c("The Department of Biological Sciences at Virginia Tech is located in Blacksburg, Virginia, USA"),
          geographic.coordinates = c('37.229596', '-80.424863', '37.22854', '-80.426228'), #N, E, S, W
          maintenance.description = "Ongoing", 
-         user.id = "melofton",
+         user.id = "ccarey",
          user.domain = 'EDI',
-         package.id = "edi.1115.1") # Put your package.id here, followed by .1 (for 1st version)
+         package.id = "edi.1776.1") # Put your package.id here, followed by .1 (for 1st version)
 
 
   # Once your xml file with your PUBLISHED package.id is Done, return to the 
