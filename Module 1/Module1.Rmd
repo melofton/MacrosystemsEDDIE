@@ -17,9 +17,10 @@ This R Markdown document contains text instructions as well as 'chunks' of R cod
 ```{r hello world}
 print('hello world')
 ```
-You can run all the code in the chunk by pushing the green play button in the top right of the code chunk. If you only want to run one line of code in the chunk, insert your cursor in the line you would like to run and press `Ctrl+Enter` on a Windows machine or `Command+Enter` on a Mac.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. For some of the code chunks, you will notice options such as `echo = TRUE, message = FALSE` at the top of the chunk. This means that when the knitted document is generated, you will still be able to see the code, but not all of the messages generated when the code is run. This is done to keep your document formatting clear of clutter.
+You can run all the code in the chunk by pushing the green play button in the top right corner of the code chunk. If you only want to run one line of code in the chunk, insert your cursor in the line you would like to run and press `Ctrl+Enter` on a Windows machine or `Command+Enter` on a Mac.
+
+When you click the **Knit** button at the top of this window, a document will be generated that includes both text content as well as the output of any embedded R code chunks within the document. For some of the code chunks, you will notice options such as `echo = TRUE, message = FALSE` at the top of the chunk. This means that when the knitted document is generated, you will still be able to see the code, but not all of the messages generated when the code is run. This is done to keep your document clear of clutter.
 
 ## Activity A - Objective 1
 Download R packages and GLM files successfully onto your computer.
@@ -28,12 +29,14 @@ Run the code below to install the `sp` package.
 ```{r install sp, echo = TRUE, message = FALSE}
 if(!require(sp)) install.packages('sp', repos = "http://cran.us.r-project.org")
 ```
+
 **NOTE**: depending on your computer, you may get output that says, *"There is a binary version available. Do you want to install from sources that need compilation? y/n"* If this pops up, type `y` and hit enter. You may now be prompted to download the command line developer tools in a pop-up window. Command line developer tools is a program used to run modeling software. Click Install and then re-run the `if(!require(sp)) install.packages('sp', repos = "http://cran.us.r-project.org")` once the install of the tools is finished. This should now successfully load- when it's done, it should say *"DONE(sp)"* if it worked.
 
 Run the code below to install the `devtools` package.
 ```{r install devtools, echo = TRUE, message = FALSE}
 if(!require(devtools)) install.packages('devtools', repos = "http://cran.us.r-project.org")
 ```
+
 **NOTE**: This is another R package used to run modeling software. If you get an error message that says, *"package ‘devtools’ is not available (for R version x.x.x)"*, be sure to check that your R software is up to date to the most recent version.
 
 Download the GLMr software. This may take a few minutes. If downloaded successfully, you should see *"DONE (GLMr)"* at the end of the output.
@@ -45,6 +48,7 @@ This step downloads the R packages that allow you to work with GLM in R.
 ```{r install glmtools, echo = TRUE, message = FALSE}
 if(!require(glmtools)) devtools::install_github("CareyLabVT/glmtools", force = TRUE)
 ```
+
 **NOTE:** you may get lots of output messages at this step- if this worked successfully, you should read a lot of text that starts with: *"This information is preliminary or provisional..."*
 
 See what version of GLM you are running- should be v.2.2.0rc5.
@@ -90,7 +94,7 @@ Now, the fun part- we get to run the model and look at output!
 
 So simple and elegant... if this works, you should see output that says "Simulation begins.." and then shows all the time steps.  At the end, it should say "Run complete" if everything worked ok. This may take a few minutes.
 
-**NOTE:** If you do not want to keep all the message text generated while running the model in your R Markdown window, you can remove it from your R Markdown window by clicking the "x" icon in the results window. Note that even if you remove it in the R Markdown window, the message text will still be in your Console window in RStudio.
+**NOTE:** If you do not want to keep all the message text generated while running the model in your R Markdown window, you can remove it from your R Markdown window by clicking the "x" icon in the results window. 
 ```{r run_glm, echo = TRUE, message = FALSE, results = 'hide'}
 run_glm(verbose=TRUE)
 ```
@@ -103,6 +107,7 @@ using the line below:
 ```{r name output}
 model_output_file <- 'output.nc'
 ```
+
 This names the output file as an object in your R environment. We will consider this our baseline model simulation because it is based on the observed data.
 
 We also want to save the model output of the daily surface water temperatures 
@@ -123,6 +128,7 @@ This plots your simulated water temperatures in a heat map, where time is displa
 ```{r plot temp}
 plot_temp(file=model_output_file)
 ```
+
 To copy your plot (e.g., onto a PowerPoint slide), right click on the plot image, then select 'Copy Image'. When you paste into PowerPoint, choose the option 'Paste as Picture' and the plot will show up.
 
 If you want to save your plot as an image file instead of copying it, right click on the plot image, then select 'Save image as...'. This will open a browser window. Give your plot a descriptive file name (e.g., "Temp_HeatMap.jpeg"), then press "Save". Your plot image will be saved in the same folder that contains this R Markdown document.
@@ -146,6 +152,7 @@ compare and plot between the observed and simulated data:
 ```{r sim_metrics}
 sim_metrics(with_nml = FALSE)
 ```
+
 The options include "thermo.depth" (depth of the thermocline), "buoyancy.freq" (buoyancy frequency, an index of thermal stratification), "water.density", and "water.temperature".
 
 Use the command below to extract the observed and simluated thermocline depths
@@ -159,21 +166,23 @@ You can look at the first few lines of this comparison using the code below:
 ```{r view therm_depths}
 head(therm_depths)
 ```
+
 To make a simple plot of the observed vs. simulated thermocline depths, run the 
 commands below:
 ```{r plot thermocline depth}
 plot(therm_depths$DateTime, therm_depths$obs, type="l", col="blue", ylim=c(0,32), 
      ylab="Thermocline depth in meters", xlab="Date") # This plots the observed data over time in blue, with a y-axis set to 0-32 m, and a y-axis label
 lines(therm_depths$DateTime, therm_depths$mod, col="red") # this adds a red line of the modeled baseline thermocline depths to the plot
-legend("bottomright",c("Observed", "Modeled Baseline"),lty=c(1,1), col=c("blue", "red")) # this adds a legend 
+legend("topleft",c("Observed", "Modeled Baseline"),lty=c(1,1), col=c("blue", "red")) # this adds a legend 
 ```
-Use the code below to extract the observed and simluated water temperatures.
+
+Run the code below to extract the observed and simluated water temperatures.
 ```{r get water temp}
 water_temp <- compare_to_field(model_output_file, field_file, metric="water.temperature", 
                                as_value=TRUE, na.rm=TRUE)
 ```
 
-Use the code below to create a line plot of observed and simulated water temperature. 
+Run the code below to create a line plot of observed and simulated water temperature. 
 ```{r plot water temp}
 plot(water_temp$DateTime, water_temp$obs, type="p", col="blue", ylim=c(15,35), 
      ylab="Water temperature in degrees C", xlab="Date")  # This plots the observed data over time in blue, with a y-axis set to 0-35 degrees, and a y-axis label
@@ -202,6 +211,7 @@ legend("topleft",c("Observed", "Modeled Baseline"),lty=c(1,1), col=c("blue", "re
 
 For both the temperature and density plots, there are multiple data points for 
 each day. Why?
+
 
 ## Activity B - Objective 5
 Using your knowledge of potential climate change, work with a partner to develop a climate change scenario for your model lake. 
@@ -243,7 +253,6 @@ file.copy(from = "met_hourly.csv", to = "met_hourly_UNALTERED.csv")
 metdata <- read.csv("met_hourly.csv")
 head(metdata)
 ```
-
 
 **THIRD**, manipulate the different input variables to create your climate/weather scenario (be creative!). 
 
@@ -318,7 +327,6 @@ Plot your climate change simulation model output against the observed data:
 plot_temp_compare(model_output_file, field_file)
 ```
 
-
 You can also plot how surface water temperature differed between the baseline
 scenario and your climate change scenario. You can do this by running the code chunk below.
 
@@ -360,6 +368,7 @@ First, we need to do a bit of "housekeeping" - we will create a new folder to co
 ```{r create scenario directory}
 dir.create("./activity_c_scenarios")
 ```
+
 This folder should appear in the same location as this R Markdown file on your computer.
 
 Next, we will name our scenarios:
@@ -404,7 +413,10 @@ for (i in 1:length(example_scenario_names)){ # iterate through the scenario name
 }
 ```
 
-The next step is to create a customized **function** that will manipulate the meteorological input file to our lake model according to the scenario we want to run. A **function** allows you to define and store some code that does a specific task, so that rather than re-typing all the code every time you want to do the task, you can just type the name of the function.  
+The next step is to create a customized **function** that will manipulate the meteorological input file to our lake model according to the scenario we want to run. 
+
+#### What is a function?
+A **function** allows you to define and store some code that does a specific task, so that rather than re-typing all the code every time you want to do the task, you can just type the name of the function.  
 
 In this case, we always want to increase air temperature by a fixed amount - but we want to increase it by a different amount for each simulation. Below is a simple function to do this:
 ```{r example scenario_function}
@@ -413,6 +425,7 @@ example_scenario_function <- function(metdata, increase){
   return(metdata)
 }
 ```
+
 Once you run this code chunk, you should notice that `scenario_function` shows up in your R environment under `Functions`. This function has two **arguments**: `metdata` and `increase`. `metdata` is the meteorological input file for our model simulation, and `increase` is an integer number of degrees that we want to add to the `metdata$AirTemp` column.
 
 Finally, we will make a vector (a series of entities; in our case, numbers) of the air temperature increases that we want to use in our scenarios. We want to increase air temperature by 1-degree increments from 1 to 6 degrees Celsius:
@@ -546,13 +559,13 @@ for (i in 1:length(scenario_names)){
 }
 ```
 
-Prepare figures to share with your classmates that demonstrate the effects of your many GRAPLEr-enabled climate change scenarios on the thermal structure of your model lake. 
+Prepare figures to share with your classmates that demonstrate the effects of your many model simulation climate change scenarios on the thermal structure of your model lake. 
 
-Plot the output of your GRAPLEr experiment using the commands you learned above. Organize some of your plots into a short presentation to share with your classmates.
+Plot the output of your model simulation experiment using the commands you learned above. Organize some of your plots into a short presentation to share with your classmates.
 
 Make sure your presentation addresses the following questions: 
 
-1) What did your scenario test? What was the range of conditions you ran over your GRAPLEr experiment? 
+1) What did your scenario test? What was the range of conditions you ran over your model simulation experiment? 
 
 2) In which scenarios did you see the biggest change in lake thermal structure?
 

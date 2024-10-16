@@ -16,6 +16,13 @@ Thumbs.db
 # GLM output for all modules
 /**/output.nc
 
+# Module 1 ignores
+/Module 1/lake.csv
+/Module 1/overflow.csv
+/Module 1/activity_c_scenarios
+/Module 1/met_hourly_UNALTERED.csv
+/Module 1/met_hourly_climate_scenario.csv
+
 # CSI ignores
 /CrossScale Interactions/**/model_output.csv
 

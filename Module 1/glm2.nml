@@ -57,7 +57,7 @@
    albedo_mode = 1
    cloud_mode = 4
    subdaily = .true.
-   meteo_fl = 'met_hourly_climate_scenario.csv'
+   meteo_fl = 'met_hourly.csv'
    wind_factor = 1
    rain_factor = 1
    sw_factor = 1
